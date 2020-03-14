@@ -11,8 +11,8 @@ class LangRepository {
 
     LangRepository() {
         languages = new ArrayList<>();
-        languages.add(new Lang(1L, "WTF", "en"));
-        languages.add(new Lang(2L, "Siemanko", "pl"));
+        languages.add(new Lang(1L, "WTF ANGIELSKI", "en"));
+        languages.add(new Lang(2L, "Siemanko POLSKI", "pl"));
     }
 
     Optional<Lang> findById(Long id) {
