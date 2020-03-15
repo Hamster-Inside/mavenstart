@@ -11,11 +11,11 @@ class LangRepository {
 
     LangRepository() {
         languages = new ArrayList<>();
-        languages.add(new Lang(1L, "WTF ANGIELSKI", "en"));
-        languages.add(new Lang(2L, "Siemanko POLSKI", "pl"));
+        languages.add(new Lang(1, "WTF ANGIELSKI", "en"));
+        languages.add(new Lang(2, "Siemanko POLSKI", "pl"));
     }
 
-    Optional<Lang> findById(Long id) {
+    Optional<Lang> findById(Integer id) {
         return languages.stream().filter(l -> l.getId().equals(id)).findFirst();
     }
 }
