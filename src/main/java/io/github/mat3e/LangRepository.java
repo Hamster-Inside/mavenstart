@@ -1,21 +1,26 @@
 package io.github.mat3e;
 
+import org.hibernate.internal.build.AllowPrintStacktrace;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 class LangRepository {
 
+        Optional<Lang> findById(Integer id) {
 
-    private List<Lang> languages;
+            var session = HibernateUtil.getSessionFactory().openSession();
+            var transaction = session.beginTransaction();
 
-    LangRepository() {
-        languages = new ArrayList<>();
-        languages.add(new Lang(1, "WTF ANGIELSKI", "en"));
-        languages.add(new Lang(2, "Siemanko POLSKI", "pl"));
+
+            var result = session.get(Lang.class, id);
+            transaction.commit();
+            session.close();
+            return Optional.ofNullable(result);
+        }
+
+
+
     }
 
-    Optional<Lang> findById(Integer id) {
-        return languages.stream().filter(l -> l.getId().equals(id)).findFirst();
-    }
-}

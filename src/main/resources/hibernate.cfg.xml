@@ -11,7 +11,7 @@
 
 <hibernate-configuration>
 
-    <session-factory>
+    <>
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.h2.Driver</property>
@@ -34,7 +34,8 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">validate</property>
 
-        <mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml"/>
+        <!-- Names the annotated entity class -->
+        <mapping class="io.github.mat3e.Lang"/>
 
     </session-factory>
 
