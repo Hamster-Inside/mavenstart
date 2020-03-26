@@ -38,6 +38,7 @@ public class HelloServlet extends HttpServlet {
         //   var age = req.getParameter(AGE_PARAM);
         var name = req.getParameter(NAME_PARAM);
         var lang = req.getParameter(LANG_PARAM);
+        resp.setCharacterEncoding("windows-1251");
         resp.getWriter().write(service.prepareGreeting(name, lang));
 
 
