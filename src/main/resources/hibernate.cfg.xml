@@ -11,7 +11,7 @@
 
 <hibernate-configuration>
 
-    <>
+<session-factory>
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.h2.Driver</property>
