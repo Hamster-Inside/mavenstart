@@ -25,8 +25,15 @@
     </form>
 </form>
 <script>
-    const form = docudemnt.getElementById('welcome');
-
+    const form = document.getElementById('welcome');
+    document.getElementById('btn').addEventListener('click', (event) => {
+        event.preventDefault();
+            const formObj = {
+            name: form.elements.name.value,
+            lang: form.elements.lang.value
+        };
+        alert(new URLSearchParams(formObj));
+    });
 </script>
 
 </body>
